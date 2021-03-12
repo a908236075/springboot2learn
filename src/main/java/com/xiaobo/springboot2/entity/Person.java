@@ -3,20 +3,15 @@ package com.xiaobo.springboot2.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
-
-/**
- * @author liubt
- * @create 2021-03-03 22:39
- */
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
-
-    private String name;
+@ConfigurationProperties(prefix = "person")
+public class Person {
 
     private int age;
 
+    private String name;
 }

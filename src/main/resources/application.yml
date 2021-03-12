@@ -6,3 +6,7 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
+person:
+  age: '22'
+  name: 'zhangsan'
+#debug: true
