@@ -1,11 +1,16 @@
 package com.xiaobo.springboot2;
 
+import com.xiaobo.springboot2.entity.Lovers;
+import com.xiaobo.springboot2.entity.Work;
+import com.xiaobo.springboot2.handler.LoversHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+
+import java.lang.reflect.Proxy;
 
 
 //@SpringBootApplication
@@ -36,7 +41,7 @@ public class Springboot2learnApplication {
         System.out.println("保持组件内所有对象都是单实例:"+(student==student3));*/
 
 
-        boolean student1 = run.containsBean("Student1");
+       /* boolean student1 = run.containsBean("Student1");
         System.out.println("Student1: " + student1);
 
         boolean student2 = run.containsBean("Student2");
@@ -46,7 +51,19 @@ public class Springboot2learnApplication {
         System.out.println("Tom: " + tom);
 
         Object person = run.getBean("Person");
-        log.info("person :"+person);
+        log.info("person :"+person);*/
+
+        Lovers lover1 = run.getBean("Lovers1", Lovers.class);
+
+        System.out.println("Lover1: "+ lover1);
+
+        Work workLover = new Lovers();
+
+        //===================代理
+        Class[] interfaces={Work.class};
+        Work work= (Work) Proxy.newProxyInstance(Lovers.class.getClassLoader(), interfaces, new LoversHandler(workLover));
+        work.meeting(3);
+        work.drink(3);
 
     }
 

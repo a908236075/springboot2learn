@@ -1,6 +1,7 @@
 package com.xiaobo.springboot2.config;
 
 import com.xiaobo.springboot2.entity.Dog;
+import com.xiaobo.springboot2.entity.Lovers;
 import com.xiaobo.springboot2.entity.Person;
 import com.xiaobo.springboot2.entity.Student;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -36,6 +37,14 @@ public class MyConfig {
     @Bean("Student2")
     public Student student2() {
         return new Student("lisi", 22);
+    }
+
+    @Bean("Lovers1")
+    public Lovers lovers1(){
+        Lovers lovers = new Lovers();
+        lovers.setAge(18);
+        lovers.setName("Lucky");
+        return lovers;
     }
 
     @Bean("Tom")
