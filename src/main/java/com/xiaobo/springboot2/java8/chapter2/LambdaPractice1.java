@@ -55,8 +55,17 @@ public class LambdaPractice1 {
         list.add(4);
         List<Integer> odd = list.stream().filter(x -> x % 2 == 0).collect(Collectors.toList());
         odd.forEach(System.out::println);
+    }
 
-
+    public static List<Apple> filterApple(List<Apple> inventory, ApplePredicate predicate) {
+        List<Apple> appleList = new ArrayList<>();
+        for (Apple apple : appleList) {
+            if (predicate.test(apple)){
+                appleList.add(apple);
+            }
+            
+        }
+        return appleList;
     }
 
 

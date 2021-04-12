@@ -15,10 +15,10 @@ public class Dish {
     int cal;
     String type;
 
-
     public class Type {
         public static final String OTHER = "other";
         public static final String FISH = "fish";
         public static final String MEAT = "meat";
+
     }
 }
