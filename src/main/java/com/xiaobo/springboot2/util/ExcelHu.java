@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ExcelHu {
-    public static void main(String[] args) throws IOException {
+    /*public static void main(String[] args) throws IOException {
 //        String msg="测试测试测试测试";
 //        ByteArrayInputStream stringStream = new ByteArrayInputStream(msg.getBytes());
 //        FileInputStream fileInputStream = new FileInputStream(new File("classpath:用户列表.xls"));
@@ -24,6 +24,6 @@ public class ExcelHu {
         }
 
 
-    }
+    }*/
 
 }

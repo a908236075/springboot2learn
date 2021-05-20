@@ -5,12 +5,12 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
- * Copyright (C), 2000-2019, ±±¾©ÌìÈÚĞÅÓĞÏŞ¹«Ë¾<br>
+ * Copyright (C), 2000-2019, åŒ—äº¬å¤©èä¿¡æœ‰é™å…¬å¸<br>
  * FileName: DecryptUtils<br>
  *
- * @author: ÁõÎ°<br>
+ * @author: åˆ˜ä¼Ÿ<br>
  * Date: 2019/9/11 16:38<br>
- * Description: ½âÃÜÀà
+ * Description: è§£å¯†ç±»
  */
 public class DecryptUtils {
 
@@ -19,12 +19,12 @@ public class DecryptUtils {
   private static final String IV = "8NONwyJtHesysWpM";
 
   /**
-   * ½âÃÜ·½·¨
+   * è§£å¯†æ–¹æ³•
    *
-   * @param data Òª½âÃÜµÄÊı¾İ
-   * @param key  ½âÃÜkey
-   * @param iv   ½âÃÜiv
-   * @return ½âÃÜµÄ½á¹û
+   * @param data è¦è§£å¯†çš„æ•°æ®
+   * @param key  è§£å¯†key
+   * @param iv   è§£å¯†iv
+   * @return è§£å¯†çš„ç»“æœ
    */
   public static String desEncrypt(String data, String key, String iv) {
     try {
@@ -71,7 +71,7 @@ public class DecryptUtils {
 
 
   /**
-   * Ê¹ÓÃÄ¬ÈÏµÄkeyºÍiv½âÃÜ
+   * ä½¿ç”¨é»˜è®¤çš„keyå’Œivè§£å¯†
    *
    * @param data
    * @return
@@ -80,25 +80,25 @@ public class DecryptUtils {
     return desEncrypt(data, KEY, IV);
   }
 
-  /*×Ö½ÚÊı×é×ª³É16½øÖÆ×Ö·û´®  */
-  public static String byte2hex(byte[] bytes) { // Ò»¸ö×Ö½ÚµÄÊı£¬
+  /*å­—èŠ‚æ•°ç»„è½¬æˆ16è¿›åˆ¶å­—ç¬¦ä¸²  */
+  public static String byte2hex(byte[] bytes) { // ä¸€ä¸ªå­—èŠ‚çš„æ•°ï¼Œ
     StringBuilder sb = new StringBuilder(bytes.length * 2);
     String tmp = "";
     for (int n = 0; n < bytes.length; n++) {
-      // ÕûÊı×ª³ÉÊ®Áù½øÖÆ±íÊ¾
+      // æ•´æ•°è½¬æˆåå…­è¿›åˆ¶è¡¨ç¤º
       tmp = (Integer.toHexString(bytes[n] & 0XFF));
       if (tmp.length() == 1) {
         sb.append("0");
       }
       sb.append(tmp);
     }
-    return sb.toString(); // ×ª³É´óĞ´
+    return sb.toString(); // è½¬æˆå¤§å†™
   }
 
   /**
-   * ½«16½øÖÆ×ª»»Îª¶ş½øÖÆ
+   * å°†16è¿›åˆ¶è½¬æ¢ä¸ºäºŒè¿›åˆ¶
    *
-   * @param hexStr ¼ÓÃÜÎÄ±¾
+   * @param hexStr åŠ å¯†æ–‡æœ¬
    * @return byte[]
    */
   private static byte[] parseHexStr2Byte(String hexStr) {
@@ -118,7 +118,7 @@ public class DecryptUtils {
 
     /*try {
       String encrypt = encrypt("talent123");
-      System.out.format("½âÃÜµÄ½á¹ûÊÇ:%s\n", encrypt);
+      System.out.format("è§£å¯†çš„ç»“æœæ˜¯:%s\n", encrypt);
     } catch (Exception e) {
       e.printStackTrace();
     }*/
@@ -127,7 +127,7 @@ public class DecryptUtils {
     System.out.println(encrypt);
 
    /* String s = desEncrypt("d440d36b2364b4031049bee8faaf0393");
-    System.out.format("½âÃÜµÄ½á¹ûÊÇ:%s\n",s);*/
+    System.out.format("è§£å¯†çš„ç»“æœæ˜¯:%s\n",s);*/
 
   }
 }

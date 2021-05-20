@@ -1,12 +1,26 @@
-server:
-  port: 8082
+
 spring:
   # rest 风格请求的编写
   mvc:
     hiddenmethod:
       filter:
         enabled: true
+  redis:
+    host: 192.168.8.128
+    port: 16379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500
+        min-idle: 0
+    lettuce:
+      shutdown-timeout: 0
 person:
   age: '22'
   name: 'zhangsan'
 #debug: true
+
+#elasticsearch
+server:
+  port: 8082
